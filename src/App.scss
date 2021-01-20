@@ -1,0 +1,94 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+$name-height: 15px;
+$line-height: 10px;
+$item-padding: 10px;
+$image-width: $name-height + 10px + $line-height * 2 + 5px;
+
+.item {
+  padding: $item-padding;
+  overflow: hidden;
+}
+
+.item-wide {
+  .image {
+    float: left;
+  }
+
+  .name {
+    margin: 0 0 0 $image-width + $item-padding;
+  }
+
+  .text {
+    display: block;
+    margin-left: $image-width + $item-padding;
+    margin-top: 10px;
+  }
+
+  .line {
+    height: $line-height;
+    background-color: lavender;
+    margin-bottom: 5px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &.line-2 {
+      width: 100px;
+    }
+  }
+}
+
+.image {
+  width: $image-width;
+  height: $image-width;
+  background-color: rebeccapurple;
+  margin: 0 auto;
+}
+
+.name {
+  height: $name-height;
+  background-color: tomato;
+  width: 45px;
+  margin: 10px auto 0;
+}
+
+.text {
+  display: none;
+}
+
+.side-bar {
+  float: left;
+  position: relative;
+}
+
+.bar-content {
+  width: calc(100% - 10px);
+}
+
+.draggable {
+  background-color: grey;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  cursor: col-resize;
+}
+
+.intro {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.container {
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
